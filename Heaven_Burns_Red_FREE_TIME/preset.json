@@ -1,0 +1,262 @@
+{
+  "preset_info": {
+    "version": 11,
+    "title": "Heaven Burns Red FREE TIME",
+    "description": "Heaven Burns Red の FREE TIME 風の時計です",
+    "author": "Nal",
+    "width": 768,
+    "height": 520,
+    "features": "ANALOG_CLOCK",
+    "release": 357121814,
+    "locked": false,
+    "pflags": 0
+  },
+  "preset_root": {
+    "internal_events": [
+      {
+        "action": "KUSTOM_ACTION"
+      }
+    ],
+    "internal_type": "RootLayerModule",
+    "globals_list": {
+      "c01": {
+        "index": 2,
+        "type": "COLOR",
+        "title": "c01",
+        "value": "#FFFF00FF"
+      },
+      "c02": {
+        "index": 3,
+        "type": "COLOR",
+        "title": "c02",
+        "value": "#FFFFD1FF"
+      },
+      "nblur": {
+        "index": 4,
+        "type": "NUMBER",
+        "title": "nBlur",
+        "min": 0,
+        "max": 100,
+        "value": 40.0
+      },
+      "fbg": {
+        "index": 1,
+        "type": "SWITCH",
+        "title": "fBG",
+        "value": 0
+      }
+    },
+    "config_scale_value": 111.76471,
+    "viewgroup_items": [
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "文字盤",
+        "viewgroup_items": [
+          {
+            "internal_type": "OverlapLayerModule",
+            "internal_toggles": {
+              "config_visible": 10
+            },
+            "internal_formulas": {
+              "config_visible": "$if(gv(fbg), ALWAYS, NEVER)$"
+            },
+            "viewgroup_items": [
+              {
+                "internal_type": "ShapeModule",
+                "internal_title": "ベタ",
+                "internal_toggles": {
+                  "paint_color": 10
+                },
+                "internal_formulas": {
+                  "paint_color": "$ce(ce(gv(c01), lum, 20), alpha, 40)$"
+                },
+                "internal_globals": {
+                  "paint_color": "c01"
+                },
+                "shape_type": "CIRCLE",
+                "shape_width": 258.0
+              }
+            ]
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 100,
+              "fx_shadow_color": 100,
+              "fx_shadow_blur": 100
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01",
+              "fx_shadow_blur": "nblur"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 240.0,
+            "paint_style": "STROKE",
+            "paint_stroke": 3.0,
+            "fx_shadow": "OUTER",
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0,
+            "internal_title": "線"
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "中心",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 100,
+              "fx_shadow_color": 100,
+              "fx_shadow_blur": 100
+            },
+            "internal_formulas": {
+              "fx_shadow_blur": "$gv(nblur)*2$"
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01",
+              "fx_shadow_blur": "nblur"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 10.0,
+            "fx_shadow": "OUTER",
+            "fx_shadow_blur": 40.0,
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "分針",
+        "config_rotate_mode": "CLOCK_MINUTE",
+        "internal_toggles": {
+          "config_rotate_mode": 0
+        },
+        "internal_formulas": {
+          "config_rotate_mode": ""
+        },
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 0,
+              "fx_shadow_color": 0,
+              "fx_shadow_blur": 10
+            },
+            "internal_formulas": {
+              "fx_shadow_blur": "$gv(nblur)*3$"
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01",
+              "fx_shadow_blur": "nblur"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 26.0,
+            "fx_shadow_blur": 40.0,
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0,
+            "position_padding_bottom": 240.0,
+            "paint_color": "#FF000000",
+            "paint_mode": "CLEAR"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 100,
+              "fx_shadow_color": 100,
+              "fx_shadow_blur": 10
+            },
+            "internal_formulas": {
+              "fx_shadow_blur": "$gv(nblur)*2$"
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01",
+              "fx_shadow_blur": "nblur"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 16.0,
+            "fx_shadow": "OUTER",
+            "fx_shadow_blur": 40.0,
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0,
+            "position_padding_bottom": 240.0
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 100,
+              "fx_shadow_color": 100,
+              "fx_shadow_blur": 10
+            },
+            "internal_formulas": {
+              "fx_shadow_blur": "$gv(nblur)*2$"
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01",
+              "fx_shadow_blur": "nblur"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 16.0,
+            "fx_shadow": "OUTER",
+            "fx_shadow_blur": 40.0,
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0,
+            "position_padding_bottom": 240.0
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "時針",
+        "config_rotate_mode": "CLOCK_HOUR_SMOOTH",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 4.0,
+            "shape_height": 60.0,
+            "shape_corners": 67,
+            "position_padding_bottom": 80.0,
+            "internal_toggles": {
+              "paint_color": 100,
+              "fx_shadow_color": 100
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01"
+            },
+            "fx_shadow": "OUTER",
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0
+          },
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 4.0,
+            "shape_height": 60.0,
+            "shape_corners": 67,
+            "position_padding_bottom": 80.0,
+            "internal_toggles": {
+              "paint_color": 100,
+              "fx_shadow_color": 100
+            },
+            "internal_globals": {
+              "paint_color": "c02",
+              "fx_shadow_color": "c01"
+            },
+            "fx_shadow": "OUTER",
+            "fx_shadow_direction": 0,
+            "fx_shadow_distance": 0
+          }
+        ]
+      }
+    ]
+  }
+}
